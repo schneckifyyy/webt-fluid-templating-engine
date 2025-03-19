@@ -1,9 +1,8 @@
 {
-    "name": "adamogris/webt-views-in-mvc",
-    "description": "test scenario for views in mvc",
+    "name": "adamogris/webt-fluid-templating-engine",
     "autoload": {
         "psr-4": {
-            "Adamogris\\WebtViewsInMvc\\": "src/"
+            "Adamogris\\WebtFluidTemplatingEngine\\": "src/"
         }
     },
     "authors": [
@@ -13,8 +12,6 @@
         }
     ],
     "require": {
-        "twbs/bootstrap": "^5.3",
-        "fluidtypo3/vhs": "*",
         "typo3fluid/fluid": "*"
     }
 }
