@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hotel-Blog</title>
+  <link rel="stylesheet" type="text/css" href="/vendor/twbs/bootstrap/dist/css/bootstrap.css">
+  <script defer src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Hotel Explorer</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Header Section -->
+<header class="bg-primary text-white text-center py-5">
+  <h1>Top 3 Hotels to Visit</h1>
+  <p class="lead">Experience luxury and comfort at these remarkable hotels</p>
+</header>
+
+<!-- Main Content -->
+<div class="container my-5">
+  <div class="row">
+    <!-- Hotel 1 -->
+    <!-- Hotels Loop -->
+    <div class="container my-5">
+      <div class="row">
+        {{HOTEL_LOOP}}
+        <!-- Hotel Card Template -->
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img src="{{HOTEL_IMAGE}}" class="card-img-top" alt="{{HOTEL_NAME}}">
+            <div class="card-body">
+              <h5 class="card-title">{{HOTEL_NAME}}</h5>
+              <p class="card-text">{{HOTEL_DESCRIPTION}}</p>
+              <a href="#" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        {{HOTEL_LOOP_END}}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2025 Hotel Explorer | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

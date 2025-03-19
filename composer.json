@@ -1,0 +1,20 @@
+{
+    "name": "adamogris/webt-views-in-mvc",
+    "description": "test scenario for views in mvc",
+    "autoload": {
+        "psr-4": {
+            "Adamogris\\WebtViewsInMvc\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "schneckifyyy",
+            "email": "adamogris@outlook.at"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "^5.3",
+        "fluidtypo3/vhs": "*",
+        "typo3fluid/fluid": "*"
+    }
+}
