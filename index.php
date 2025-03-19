@@ -1,6 +1,8 @@
 <?php
 require_once 'vendor/autoload.php';
-use Adamogris\WebtViewsInMvc\Model\Entity\Hotel;
+use Adamogris\WebtFluidTemplatingEngine\Model\Entity\Hotel;
+use TYPO3Fluid\Fluid\View\TemplateView;
+use TYPO3Fluid\Fluid\View\TemplatePaths;
 
 $hotels = [
     new Hotel("Seaside Paradise", "Located in the heart of the city, Hotel Paradise offers breathtaking views and world-class amenities.", "src/images/hotelParadise.jpg"),
@@ -8,24 +10,16 @@ $hotels = [
     new Hotel("Mountain Escape Lodge", "Surrounded by stunning mountains, this lodge is the perfect getaway for those seeking adventure and relaxation.", "src/images/mountainsEscapeLodge.jpg")
 ];
 
-// Read the template
-$template = file_get_contents('src/templates/index.html');
 
-// Extract the loop block
-preg_match('/{{HOTEL_LOOP}}(.*?){{HOTEL_LOOP_END}}/s', $template, $matches);
-$hotelTemplate = $matches[1] ?? '';
+// Create a new Fluid view
+$view = new TemplateView();
 
-$hotelHtml = '';
+// Define template paths
+$view->setTemplateRootPaths([__DIR__ . '/src/templates']); // Adjusted to match your structure
 
-foreach ($hotels as $hotel) {
-    $hotelEntry = str_replace("{{HOTEL_NAME}}", $hotel->getName(), $hotelTemplate);
-    $hotelEntry = str_replace("{{HOTEL_DESCRIPTION}}", $hotel->getDescription(), $hotelEntry);
-    $hotelEntry = str_replace("{{HOTEL_IMAGE}}", $hotel->getImgPath(), $hotelEntry);
-    $hotelHtml .= $hotelEntry;
-}
+// Assign variables
+$view->assign('name', 'Adam');
 
-// Replace the loop block in the template
-$template = preg_replace('/{{HOTEL_LOOP}}(.*?){{HOTEL_LOOP_END}}/s', $hotelHtml, $template);
-
-echo $template;
+// Render the template
+echo $view->render('index');
 ?>

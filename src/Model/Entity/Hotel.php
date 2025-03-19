@@ -1,5 +1,5 @@
 <?php
-namespace Adamogris\WebtViewsInMvc\Model\Entity;
+namespace Adamogris\WebtFluidTemplatingEngine\Model\Entity;
 class Hotel
 {
 
