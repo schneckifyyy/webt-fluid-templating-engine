@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hotel-Blog</title>
-  <link rel="stylesheet" type="text/css" href="/vendor/twbs/bootstrap/dist/css/bootstrap.css">
-  <script defer src="/vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <meta charset="UTF-8">
+  <title>Hotel-Blog</title>
+  <link rel="stylesheet" type="text/css" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">
+  <script defer src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </head>
 <body>
 <!-- Navigation Bar -->
@@ -40,26 +40,19 @@
 <!-- Main Content -->
 <div class="container my-5">
   <div class="row">
-    <!-- Hotel 1 -->
-    <!-- Hotels Loop -->
-    <div class="container my-5">
-      <div class="row">
-        {{HOTEL_LOOP}}
-        <!-- Hotel Card Template -->
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img src="{{HOTEL_IMAGE}}" class="card-img-top" alt="{{HOTEL_NAME}}">
-            <div class="card-body">
-              <h5 class="card-title">{{HOTEL_NAME}}</h5>
-              <p class="card-text">{{HOTEL_DESCRIPTION}}</p>
-              <a href="#" class="btn btn-primary">Read More</a>
-            </div>
+    <f:for each="{hotels}" as="hotel">
+      <!-- Hotel Card -->
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <img src="/src/images/{hotel.imgPath}" class="card-img-top" alt="{hotel.name}">
+          <div class="card-body">
+            <h5 class="card-title">{hotel.name}</h5>
+            <p class="card-text">{hotel.description}</p>
+            <a href="#" class="btn btn-primary">Read More</a>
           </div>
         </div>
-        {{HOTEL_LOOP_END}}
       </div>
-    </div>
-
+    </f:for>
   </div>
 </div>
 

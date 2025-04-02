@@ -12,6 +12,7 @@
         }
     ],
     "require": {
-        "typo3fluid/fluid": "*"
+        "typo3fluid/fluid": "^4.0",
+        "twbs/bootstrap": "^5.3"
     }
 }
