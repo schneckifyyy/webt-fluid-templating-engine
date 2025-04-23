@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:f="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title><f:render section="Title" /></title>
+  <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css" />
+  <script defer src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js" ></script>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <f:render section="Navbar"/>
+</nav>
+<!-- Layout slots -->
+<div class="header">
+  <f:render section="Header" />
+</div>
+<div class="main">
+  <f:render section="Main" />
+</div>
+<div class="footer">
+  <f:render section="Footer" />
+</div>
+
+</body>
+</html>

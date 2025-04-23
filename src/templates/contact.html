@@ -1,0 +1,32 @@
+<f:layout name="2Col" />
+
+<f:section name="Title">Contact Us</f:section>
+<f:section name ="Navbar">
+  <f:render partial="navBar" arguments="{_all}"/>
+</f:section>
+<f:section name="LeftCol">
+  <h2>Contact Form</h2>
+  <form method="post" action="#">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" placeholder="John Doe">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email</label>
+      <input type="email" class="form-control" id="email" placeholder="john@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Your Message</label>
+      <textarea class="form-control" id="message" rows="5" placeholder="Type your message here..."></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</f:section>
+
+<f:section name="RightCol">
+  <h2>Contact Info</h2>
+  <p><strong>Hotel Explorer HQ</strong></p>
+  <p>123 Paradise Road<br>Vienna, Austria</p>
+  <p><strong>Email:</strong> support@hotelexplorer.com</p>
+  <p><strong>Phone:</strong> +43 660 1234567</p>
+  </f:section>

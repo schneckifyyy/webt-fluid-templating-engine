@@ -1,50 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hotel-Blog</title>
-    <link rel="stylesheet" type="text/css" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.css">
-    <script defer src="../../vendor/twbs/bootstrap/dist/js/bootstrap.bundle.js"></script>
-</head>
-<body>
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hotel Explorer</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+<f:layout name="1Col" />
+
+<f:section name="Title">Hotel Blog</f:section>
+<f:section name ="Navbar">
+    <f:render partial="navBar" arguments="{_all}"/>
+</f:section>
+<f:section name="Header">
+    <f:render partial="header" arguments="{_all}" />
+</f:section>
+<f:section name="Main">
+    <div class="container my-5">
+        <div class="row">
+            <f:comment>Below there is a loop for displaying the hotels</f:comment>
+            <f:for each="{hotels}" as="hotel">
+                <f:render partial="BusinessEntity" arguments="{hotel: hotel}" />
+            </f:for>
         </div>
     </div>
-</nav>
+</f:section>
 
-<f:render partial="header" arguments="{_all}"/>
-
-
-<!-- Main Content -->
-<div class="container my-5">
-    <div class="row">
-        <f:for each="{hotels}" as="hotel">
-            <f:render partial="BusinessEntity" arguments="{_all}"/>
-        </f:for>
-    </div>
-</div>
-
-
-<f:render partial="footer" arguments="{_all}"/>
-
-</body>
-</html>
+<f:section name="Footer">
+    <f:render partial="footer" arguments="{_all}" />
+</f:section>
